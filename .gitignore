@@ -1,0 +1,7 @@
+.idea
+
+.sass-cache
+node_modules
+css/main.css
+css/main.css.map
+dist
