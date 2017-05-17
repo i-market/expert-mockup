@@ -25,17 +25,6 @@ $(document).ready(function () {
     });
   });
 
-  //placeholder
-  var t;
-  $("input, textarea").on({
-    focus: function () {
-      this.value == $(this).attr("data-placeholder") ? $(this).val("").addClass("active") : $(this).addClass("active")
-    },
-    blur: function () {
-      t = $(this).data("placeholder"), "" == $(this).val() ? $(this).removeClass("active").val(t) : $(this).addClass("active")
-    }
-  });
-
   // прокрутка вверх
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
@@ -50,15 +39,36 @@ $(document).ready(function () {
     }, 700);
     return false;
   });
-  
+
+  // инпуты
+  $('.wrap_input input, .wrap_input textarea').each(function () {
+    $(this).on('change', function () {
+      $(this).val() != "" ? $(this).next().fadeOut(300) : $(this).next().fadeIn(300)
+    });
+  })
+
+
   // hamburger
-  $('.hamburger').on('click', function(){
+  $('.hamburger').on('click', function () {
     $('body, html, .main_menu').addClass('open');
   });
-  $('.menu_hamburger').on('click', function(){
+  $('.menu_hamburger').on('click', function () {
     $('body, html, .main_menu').removeClass('open');
   });
-  //
+
+  // открытие скрытых блоков в калькуляторе
+  $('.hidden_block input').on('change', function () {
+    var item = $(this).data('name');
+    $(this).hasClass('open_block') && $(this).is(':checked') ? $('.' + item).slideDown(200) : $('.' + item).slideUp(200);
+  });
+
+
+  // запуск видоса
+  $('.video_item').on('click', function () {
+    var src = $(this).data('src');
+    var autoPlay = src + '?autoplay=1'
+    $(this).find('iframe').attr('src', autoPlay).fadeIn();
+  });
 
   // аккордион
   $(".accordeon .accordeon_inner").hide().prev().on('click', function () {
@@ -67,7 +77,7 @@ $(document).ready(function () {
     $('.accordeon_title', '.accordeon').not(this).removeClass('active');
     $(this).toggleClass('active');
   });
-  
+
   // просмотр изображений
   $('.gallery').fancybox();
 
@@ -141,5 +151,29 @@ $(document).ready(function () {
   $(window).on('load resize', function () {
     slideResize();
   });
+
+  // tooltips
+  $('.tooltip').tooltipster({
+    theme: ['tooltipster-noir', 'tooltipster-noir-customized'],
+    maxWidth: 320,
+    minWidth: 100,
+    zIndex: 11,
+    trigger: 'custom',
+    arrow: false,
+    side: 'bottom',
+    triggerOpen: {
+      mouseenter: true,
+      click: true,
+      tap: true
+    },
+    triggerClose: {
+      click: true,
+      scroll: true,
+      tap: true,
+      mouseleave: true
+    }
+  });
+  // select
+  $('select').dropdown();
 
 });

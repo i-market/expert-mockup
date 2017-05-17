@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4a97e5;
+      }
+
+      .cls-2, .cls-3 {
+        font-size: 18px;
+      }
+
+      .cls-3 {
+        fill: #fff;
+        font-family: "Open Sans";
+      }
+    </style>
+  </defs>
+  <g>
+    <rect width="24" height="24" class="cls-1"/>
+    <text x="8" y="19" class="cls-2"><tspan class="cls-3">?</tspan></text>
+  </g>
+</svg>
