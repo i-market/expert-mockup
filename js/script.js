@@ -43,7 +43,7 @@ $(document).ready(function () {
   // инпуты
   $('.wrap_input input, .wrap_input textarea').each(function () {
     $(this).on('change', function () {
-      $(this).val() != "" ? $(this).next().fadeOut(300) : $(this).next().fadeIn(300)
+      $(this).val() != "" ? $(this).next().addClass('focus') : $(this).next().removeClass('focus')
     });
   })
 
