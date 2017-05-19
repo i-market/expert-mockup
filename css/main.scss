@@ -512,6 +512,14 @@ select {
   height: 48px;
   font-size: 0;
   cursor: pointer;
+  &.small_text {
+    .text {
+      @media only screen and (max-width: 767px) {
+        font-size: 12px;
+        padding: 0 5px;
+      }
+    }
+  }
   &:hover {
     .text {
       background: #005cb8;
@@ -1396,6 +1404,9 @@ h4 {
 
 .organization_card {
   margin-bottom: 35px;
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
 }
 
 .organization_card_table {
@@ -1748,6 +1759,9 @@ h4 {
     padding: 0 30px;
     font-size: 18px;
     background: #deecfa;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   button {
     width: 120px;
@@ -1947,11 +1961,11 @@ h4 {
     font-size: 16px;
     font-weight: 700;
     margin-bottom: 10px;
+    min-height: 20px;
+    padding-top: 2px;
   }
   .ico {
     padding-right: 30px;
-    min-height: 20px;
-    padding-top: 2px;
     display: inline-block;
     vertical-align: top;
     background: url('../images/ico_9.png')no-repeat right center;
@@ -1976,6 +1990,14 @@ h4 {
 .wrap_map {
   height: 480px;
   margin-bottom: 65px;
+}
+
+.driving_directions {
+  margin-bottom: 65px;
+  img {
+    display: block;
+    width: 100%;
+  }
 }
 
 .contacts_gallery {
@@ -2074,16 +2096,23 @@ h4 {
 
 .infoblock_gallery {
   margin-bottom: 35px;
+  .col_4 {
+    @media only screen and (max-width: 767px) {
+      width: calc(50% - 30px);
+    }
+  }
   .gallery {
     height: 160px;
     position: relative;
     &:hover {
-      &:before,
-      &:after {
+      .inner {
         opacity: 1;
       }
     }
-    &:before {
+    @media only screen and (max-width:767px) {
+      height: auto;
+    }
+    /*&:before {
       display: block;
       position: absolute;
       content: '';
@@ -2095,8 +2124,8 @@ h4 {
       transition: .3s;
       opacity: 0;
       z-index: 1;
-    }
-    &:after {
+    }*/
+    /*&:after {
       display: block;
       position: absolute;
       content: '';
@@ -2110,11 +2139,41 @@ h4 {
       transition: .3s;
       opacity: 0;
       z-index: 2;
-    }
+    }*/
   }
-  .col_4 {
-    @media only screen and (max-width: 767px) {
-      width: calc(50% - 30px);
+  .gallery_img{
+    display: block;
+    height: 160px;
+  }
+  .inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    color: #FFF;
+    transition: .3s;
+    @media only screen and (max-width:767px) {
+      position: relative;
+      display: block;
+      height: auto;
+      opacity: 1;
+      color: #000;
+      background: none;
+      padding: 10px 5px;
+    }
+    .text {
+      width: 100%;
+      display: block;
+      text-align: center;
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 600;
     }
   }
 }
@@ -2229,7 +2288,11 @@ h4 {
     z-index: 1;
     background: none;
     &:focus+.input_text {
-      opacity: 0;
+      font-size: 12px;
+      top: -15px;
+      @media only screen and (max-width:767px) {
+        top: -12px;
+      }
     }
     @media only screen and (max-width:767px) {
       padding: 0 15px;
@@ -2253,6 +2316,13 @@ h4 {
     overflow: hidden;
     text-overflow: ellipsis;
     transition: .3s;
+    &.focus{
+      font-size: 12px;
+      top: -15px;
+      @media only screen and (max-width:767px) {
+        top: -12px;
+      }
+    }
     @media only screen and (max-width: 767px) {
       left: 15px;
     }
@@ -2607,6 +2677,7 @@ h4 {
 }
 
 .total_price_block {
+  margin-bottom: 60px;
   .inner {
     max-width: 1170px;
     margin: 0 auto;
@@ -2754,7 +2825,8 @@ h4 {
   max-width: 1170px;
   background: $l_yellow;
   padding-bottom: 60px;
-  margin: 0 auto 60px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
 
 .radio_label {
@@ -2783,7 +2855,7 @@ h4 {
   }
 }
 
-input[type="radio"]:checked + .radio_label {
+input[type="radio"]:checked+.radio_label {
   color: $blue;
   &:before {
     border-color: $blue;
@@ -2830,7 +2902,7 @@ input[type="radio"]:checked + .radio_label {
     color: #4b5661;
     padding-left: 30px;
     margin-bottom: 10px;
-    @media only screen and (max-width:767px) {
+    @media only screen and (max-width: 767px) {
       padding-left: 0;
     }
   }
@@ -2878,14 +2950,14 @@ input[type="radio"]:checked + .radio_label {
   background: #feeecc;
   position: relative;
   margin-bottom: 10px;
-  &.wrap_calc_item_block--checkbox{
+  &.wrap_calc_item_block--checkbox {
     padding: 20px 10px;
     margin-bottom: 20px;
   }
-  &.wrap_calc_item_block--some{
-    .fs-dropdown{
+  &.wrap_calc_item_block--some {
+    .fs-dropdown {
       margin-bottom: 15px;
-      &:last-child{
+      &:last-child {
         margin-bottom: 0;
       }
     }
@@ -2899,8 +2971,8 @@ input[type="radio"]:checked + .radio_label {
     border: 10px solid rgba(0, 0, 0, 0);
     border-bottom: 10px solid #feeecc;
   }
-  .wrap_checkbox{
-    &:last-child{
+  .wrap_checkbox {
+    &:last-child {
       margin-bottom: 0;
     }
   }
@@ -2920,15 +2992,15 @@ input[type="radio"]:checked + .radio_label {
   }
 }
 
-.bold{
+.bold {
   font-weight: 700;
   color: #000;
   margin-bottom: 15px;
   padding-left: 30px;
 }
 
-#re_call{
-  .block{
+#re_call {
+  .block {
     position: relative;
     background: #FFF;
     width: 570px;
@@ -2946,7 +3018,11 @@ input[type="radio"]:checked + .radio_label {
       padding: 20px;
     }
   }
-  .wrap_robot_block{
+  .wrap_robot_block {
     justify-content: space-around;
   }
+}
+
+.ymaps-2-1-47-controls__toolbar {
+  display: none !important;
 }

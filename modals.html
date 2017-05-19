@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Краткое описание сайта для поисковика">
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Название страницы - заголовок</title>
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&amp;subset=cyrillic-ext" rel="stylesheet">
+  <link rel="stylesheet" media="screen" href="css/lib/normalize.min.css">
+  <link rel="stylesheet" media="screen" href="css/lib/jquery.fancybox.min.css">
+  <link rel="stylesheet" media="screen" href="css/lib/slick.css">
+  <link rel="stylesheet" media="screen" href="css/main.css">
+  <!--[if gte IE 9]>
+<style type="text/css">
+.gradient {
+filter: none;
+}
+</style>
+<![endif]-->
+</head>
+
+<body>
+  <!-- CONTENT START -->
+  <main class="content">
+    <br><br><br><br><br><br><br><br>
+    <ul>
+      <li><span data-modal="re_call">Обратный звонок</span></li>
+      <br><br>
+      <li><span data-modal="modal_1">Обследование</span></li>
+      <br><br>
+      <li><span data-modal="modal_2">Надзор</span></li>
+      <br><br>
+      <li><span data-modal="modal_3">Отдельные виды работ</span></li>
+      <br><br>
+      <li><span data-modal="modal_4">Мониторинг</span></li>
+      <br><br>
+      <li><span data-modal="modal_5">Экспертиза</span></li>
+      <br><br>
+      <li><span data-modal="modal_6">Проектные работы</span></li>
+    </ul>
+    <br><br><br><br><br><br><br><br>
+  </main>
+  <!--МОДАЛКИ-->
+  <!--Обратный звонок-->
+  <div class="modal" id="re_call">
+    <div class="block">
+      <span class="close">×</span>
+      <form action="" method="post" id="">
+        <h2>Обратный звонок</h2>
+        <div class="wrap_input_block">
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Контактное лицо<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Номер телефона</span>
+          </div>
+        </div>
+        <div class="wrap_robot_block">
+          <button type="submit" class="big_btn">
+              <span class="text"><span>Перезвоните мне</span></span>
+            <span class="img">
+                <img src="images/telephone.svg" alt="">
+              </span>
+            </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="modal" id="modal_1">
+    <div class="block">
+      <span class="close">×</span>
+      <form action="" method="post" id="">
+        <h2>Заявка</h2>
+        <h3>На выполнение обследования конструкций, помещений, зданий, сооружений, инженерных сетей и оборудования</h3>
+        <p class="top_text"><b>Пожалуйста, заполните поля заявки</b>. Поля, помеченные звездочкой (<span class="red">*</span>), обязательны для заполнения. Если представленная форма не отвечает критериям вашего объекта, отстутствуют необходимые для заполнения формы сведения, или Вы просто не хотите её заполнять - просим связаться с нами по телефону: <a href="#" class="red">+7(495)641-70-69</a>, <a href="#" class="red">+7(499)340-34-73</a>. Также, Вы можете определить стоимость и сроки выполнения работ, заполнив <a href="#" class="red">On-line</a> форму.</p>
+        <div class="wrap_input_block">
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Наименование объекта(ов) обследования<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Местонахождение объекта(ов)</span>
+          </div>
+          <div class="wrap_input">
+            <textarea></textarea>
+            <span class="input_text">Опишите цели обследования<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <textarea></textarea>
+            <span class="input_text">Описание объекта(ов) обследования (назначение, этажность, наличие подвала, полщадь, год постройки и пр.)<span class="red">*</span></span>
+          </div>
+        </div>
+        <div class="wrap_checkbox_block">
+          <h4>Наличние документов:</h4>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_1" checked>
+            <label for="some_1">Результаты ранее выполненых обследований</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_11">
+            <label for="some_11">Проектная документация</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_2">
+            <label for="some_2">Рабочая документация</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_22">
+            <label for="some_22">Планы БТИ</label>
+          </div>
+          <div class="wrap_input">
+            <textarea></textarea>
+            <span class="input_text">Дополнительная информация по обследованию<span class="red">*</span></span>
+          </div>
+        </div>
+        <div class="wrap_add_file">
+          <div class="file pdf">
+            <p class="info">PDF, 650 Кб <span class="remove red">Удалить</span></p>
+            <p class="title">Чертежи и схемы объекта по адресу г. Воронеж, ул. Ленина 15</p>
+          </div>
+          <div class="choose_file">
+            <div class="big_btn">
+              <span class="text"><span>Прикрепить файл к заявке</span></span>
+              <span class="img">
+                <img src="images/clip.svg" alt="">
+              </span>
+            </div>
+            <p class="choose_file_text"><b>Документы</b> по объекту(ам) технического надзора (к заявке можно прикрепить не более 10 файлов)</p>
+          </div>
+        </div>
+        <h3 class="h3_mb">Контактная информация для ответа</h3>
+        <div class="wrap_input_block">
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Контактное лицо<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Наименование организации</span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Электронная почта (e-mail)<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Телефон 1</span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Телефон 2</span>
+          </div>
+        </div>
+        <div class="wrap_robot_block">
+          <div class="robot"></div>
+          <button type="submit" class="big_btn">
+              <span class="text"><span>Отправить заявку</span></span>
+            <span class="img">
+                <img src="images/plane.svg" alt="">
+              </span>
+            </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="modal" id="modal_2">
+    <div class="block">
+      <span class="close">×</span>
+      <form action="" method="post" id="">
+        <h2>Заявка</h2>
+        <h3>на проведение технического надзора, строительного контроля</h3>
+        <p class="top_text"><b>Пожалуйста, заполните поля заявки</b>. Поля, помеченные звездочкой (<span class="red">*</span>), обязательны для заполнения. Если представленная форма не отвечает критериям вашего объекта, отстутствуют необходимые для заполнения формы сведения, или Вы просто не хотите её заполнять - просим связаться с нами по телефону: <a href="#" class="red">+7(495)641-70-69</a>, <a href="#" class="red">+7(499)340-34-73</a>. Также, Вы можете определить стоимость и сроки выполнения работ, заполнив <a href="#" class="red">On-line</a> форму.</p>
+        <div class="wrap_input_block">
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Наименование предмета(ов)<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Местонахождение</span>
+          </div>
+          <div class="wrap_input">
+            <textarea></textarea>
+            <span class="input_text">Описание объекта(ов) технического надзора (назначение, этажность, наличие подвала, полщадь, этап строительства и пр.)<span class="red">*</span></span>
+          </div>
+        </div>
+        <div class="wrap_checkbox_block">
+          <h4>Наличние документов:</h4>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_1" checked>
+            <label for="some_1">Результаты гидрогеологических изысканий</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_11">
+            <label for="some_11">Проектная документация</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_2">
+            <label for="some_2">Рабочая документация</label>
+          </div>
+        </div>
+        <div class="wrap_add_file">
+          <div class="file pdf">
+            <p class="info">PDF, 650 Кб <span class="remove red">Удалить</span></p>
+            <p class="title">Чертежи и схемы объекта по адресу г. Воронеж, ул. Ленина 15</p>
+          </div>
+          <div class="choose_file">
+            <div class="big_btn">
+              <span class="text"><span>Прикрепить файл к заявке</span></span>
+              <span class="img">
+                <img src="images/clip.svg" alt="">
+              </span>
+            </div>
+            <p class="choose_file_text"><b>Документы</b> по объекту(ам) технического надзора (к заявке можно прикрепить не более 10 файлов)</p>
+          </div>
+        </div>
+        <h3 class="h3_mb">Контактная информация для ответа</h3>
+        <div class="wrap_input_block">
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Контактное лицо<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Наименование организации</span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Электронная почта (e-mail)<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Телефон 1</span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Телефон 2</span>
+          </div>
+        </div>
+        <div class="wrap_robot_block">
+          <div class="robot"></div>
+          <button type="submit" class="big_btn">
+              <span class="text"><span>Отправить заявку</span></span>
+            <span class="img">
+                <img src="images/plane.svg" alt="">
+              </span>
+            </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="modal" id="modal_3">
+    <div class="block">
+      <span class="close">×</span>
+      <form action="" method="post" id="">
+        <h2>Заявка</h2>
+        <h3>на проведение отдельных видов работ по экспертизе и обследованию. Заявка на выполнение экспертизы отдельных материалов, деталей, изделий, узлов конструкций, элементов конструкций и пр.</h3>
+        <p class="top_text"><b>Пожалуйста, заполните поля заявки</b>. Поля, помеченные звездочкой (<span class="red">*</span>), обязательны для заполнения. Если представленная форма не отвечает критериям вашего объекта, отстутствуют необходимые для заполнения формы сведения, или Вы просто не хотите её заполнять - просим связаться с нами по телефону: <a href="#" class="red">+7(495)641-70-69</a>, <a href="#" class="red">+7(499)340-34-73</a>. Также, Вы можете определить стоимость и сроки выполнения работ, заполнив <a href="#" class="red">On-line</a> форму.</p>
+        <div class="wrap_input_block">
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Наименование предмета(ов) экспертизы или обследования<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Местонахождение</span>
+          </div>
+          <div class="wrap_input">
+            <textarea></textarea>
+            <span class="input_text">Опишите цели проведения экспертизы или обследования?<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <textarea></textarea>
+            <span class="input_text">Дополнительная информация по экспертизе или обследованию<span class="red">*</span></span>
+          </div>
+        </div>
+        <div class="wrap_add_file">
+          <div class="file pdf">
+            <p class="info">PDF, 650 Кб <span class="remove red">Удалить</span></p>
+            <p class="title">Чертежи и схемы объекта по адресу г. Воронеж, ул. Ленина 15</p>
+          </div>
+          <div class="choose_file">
+            <div class="big_btn">
+              <span class="text"><span>Прикрепить файл к заявке</span></span>
+              <span class="img">
+                <img src="images/clip.svg" alt="">
+              </span>
+            </div>
+            <p class="choose_file_text"><b>Документы</b> по объекту(ам) технического надзора (к заявке можно прикрепить не более 10 файлов)</p>
+          </div>
+        </div>
+        <h3 class="h3_mb">Контактная информация для ответа</h3>
+        <div class="wrap_input_block">
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Контактное лицо<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Наименование организации</span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Электронная почта (e-mail)<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Телефон 1</span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Телефон 2</span>
+          </div>
+        </div>
+        <div class="wrap_robot_block">
+          <div class="robot"></div>
+          <button type="submit" class="big_btn">
+              <span class="text"><span>Отправить заявку</span></span>
+            <span class="img">
+                <img src="images/plane.svg" alt="">
+              </span>
+            </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="modal" id="modal_4">
+    <div class="block">
+      <span class="close">×</span>
+      <form action="" method="post" id="">
+        <h2>Заявка</h2>
+        <h3>на проведение мониторинга</h3>
+        <p class="top_text"><b>Пожалуйста, заполните поля заявки</b>. Поля, помеченные звездочкой (<span class="red">*</span>), обязательны для заполнения. Если представленная форма не отвечает критериям вашего объекта, отстутствуют необходимые для заполнения формы сведения, или Вы просто не хотите её заполнять - просим связаться с нами по телефону: <a href="#" class="red">+7(495)641-70-69</a>, <a href="#" class="red">+7(499)340-34-73</a>. Также, Вы можете определить стоимость и сроки выполнения работ, заполнив <a href="#" class="red">On-line</a> форму.</p>
+        <div class="wrap_input_block">
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Наименование объекта(ов) мониторинга<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Местонахождение объекта(ов)</span>
+          </div>
+          <div class="wrap_input">
+            <textarea></textarea>
+            <span class="input_text">Опишите цели проведения мониторинга<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <textarea></textarea>
+            <span class="input_text">Описание объекта(ов) мониторинга (назначение, этажность, наличие подвала, площадь, год постройки и пр.)<span class="red">*</span></span>
+          </div>
+        </div>
+        <div class="wrap_checkbox_block">
+          <h4>Наличние документов:</h4>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_1" checked>
+            <label for="some_1">Результаты ранее выполненых  обследований или экспертиз</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_11">
+            <label for="some_11">Результаты ранее проведенного мониторинга</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_12">
+            <label for="some_12">Результаты гидрогеологических изысканий</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_2">
+            <label for="some_2">Проектная документация</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_3">
+            <label for="some_3">Рабочая документация</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_5">
+            <label for="some_5">Планы БТИ</label>
+          </div>
+          <div class="wrap_input">
+            <textarea></textarea>
+            <span class="input_text">Дополнительная информация по мониториингу<span class="red">*</span></span>
+          </div>
+        </div>
+        <div class="wrap_add_file">
+          <div class="file pdf">
+            <p class="info">PDF, 650 Кб <span class="remove red">Удалить</span></p>
+            <p class="title">Чертежи и схемы объекта по адресу г. Воронеж, ул. Ленина 15</p>
+          </div>
+          <div class="choose_file">
+            <div class="big_btn">
+              <span class="text"><span>Прикрепить файл к заявке</span></span>
+              <span class="img">
+                <img src="images/clip.svg" alt="">
+              </span>
+            </div>
+            <p class="choose_file_text"><b>Документы</b> по объекту(ам) технического надзора (к заявке можно прикрепить не более 10 файлов)</p>
+          </div>
+        </div>
+        <h3 class="h3_mb">Контактная информация для ответа</h3>
+        <div class="wrap_input_block">
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Контактное лицо<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Наименование организации</span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Электронная почта (e-mail)<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Телефон 1</span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Телефон 2</span>
+          </div>
+        </div>
+        <div class="wrap_robot_block">
+          <div class="robot"></div>
+          <button type="submit" class="big_btn">
+              <span class="text"><span>Отправить заявку</span></span>
+            <span class="img">
+                <img src="images/plane.svg" alt="">
+              </span>
+            </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="modal" id="modal_5">
+    <div class="block">
+      <span class="close">×</span>
+      <form action="" method="post" id="">
+        <h2>Заявка</h2>
+        <h3>на проведение строительно-технической экспертизы конструкций, зданий, сооружений, помещений, инженерных сетей и оборудования, а также судебной экспертизы</h3>
+        <p class="top_text"><b>Пожалуйста, заполните поля заявки</b>. Поля, помеченные звездочкой (<span class="red">*</span>), обязательны для заполнения. Если представленная форма не отвечает критериям вашего объекта, отстутствуют необходимые для заполнения формы сведения, или Вы просто не хотите её заполнять - просим связаться с нами по телефону: <a href="#" class="red">+7(495)641-70-69</a>, <a href="#" class="red">+7(499)340-34-73</a>. Также, Вы можете определить стоимость и сроки выполнения работ, заполнив <a href="#" class="red">On-line</a> форму.</p>
+        <div class="wrap_input_block">
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Наименование объекта(ов) экспертизы<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Местонахождение объекта(ов)</span>
+          </div>
+          <div class="wrap_input">
+            <textarea></textarea>
+            <span class="input_text">Опишите цели проведения экспертизы<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <textarea></textarea>
+            <span class="input_text">Описание объекта(ов) экспертизы (назначение, этажность, наличие подвала, площадь, год постройки и пр.)<span class="red">*</span></span>
+          </div>
+        </div>
+        <div class="wrap_checkbox_block">
+          <h4>Наличние документов:</h4>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_1" checked>
+            <label for="some_1">Результаты ранее выполненых  обследований</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_11">
+            <label for="some_11">Результаты гидрогеологических изысканий</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_2">
+            <label for="some_2">Проектная документация</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_3">
+            <label for="some_3">Рабочая документация</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_5">
+            <label for="some_5">Сметная документация</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_6">
+            <label for="some_6">Исполнительная документация</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_7">
+            <label for="some_7">Планы БТИ</label>
+          </div>
+          <div class="wrap_input">
+            <textarea></textarea>
+            <span class="input_text">Дополнительная информация по экспертизе<span class="red">*</span></span>
+          </div>
+        </div>
+        <div class="wrap_add_file">
+          <div class="file pdf">
+            <p class="info">PDF, 650 Кб <span class="remove red">Удалить</span></p>
+            <p class="title">Чертежи и схемы объекта по адресу г. Воронеж, ул. Ленина 15</p>
+          </div>
+          <div class="choose_file">
+            <div class="big_btn">
+              <span class="text"><span>Прикрепить файл к заявке</span></span>
+              <span class="img">
+                <img src="images/clip.svg" alt="">
+              </span>
+            </div>
+            <p class="choose_file_text"><b>Документы</b> по объекту(ам) технического надзора (к заявке можно прикрепить не более 10 файлов)</p>
+          </div>
+        </div>
+        <h3 class="h3_mb">Контактная информация для ответа</h3>
+        <div class="wrap_input_block">
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Контактное лицо<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Наименование организации</span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Электронная почта (e-mail)<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Телефон 1</span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Телефон 2</span>
+          </div>
+        </div>
+        <div class="wrap_robot_block">
+          <div class="robot"></div>
+          <button type="submit" class="big_btn">
+              <span class="text"><span>Отправить заявку</span></span>
+            <span class="img">
+                <img src="images/plane.svg" alt="">
+              </span>
+            </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="modal" id="modal_6">
+    <div class="block">
+      <span class="close">×</span>
+      <form action="" method="post" id="">
+        <h2>Заявка</h2>
+        <h3>На выполнение проектных работ</h3>
+        <p class="top_text"><b>Пожалуйста, заполните поля заявки</b>. Поля, помеченные звездочкой (<span class="red">*</span>), обязательны для заполнения. Если представленная форма не отвечает критериям вашего объекта, отстутствуют необходимые для заполнения формы сведения, или Вы просто не хотите её заполнять - просим связаться с нами по телефону: <a href="#" class="red">+7(495)641-70-69</a>, <a href="#" class="red">+7(499)340-34-73</a>. Также, Вы можете определить стоимость и сроки выполнения работ, заполнив <a href="#" class="red">On-line</a> форму.</p>
+        <div class="wrap_input_block">
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Наименование объекта(ов)<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Местонахождение объекта(ов)</span>
+          </div>
+        </div>
+        <div class="wrap_checkbox_block">
+          <h4>Какие проектные решения необходимо разработать? Выберите наименование раздела(ов)<span class="red">*</span>:</h4>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_1" checked>
+            <label for="some_1">Конструктивные решения. Железобетонные конструкции</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_2">
+            <label for="some_2">Конструктивные решения. Металлические конструкции</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_3">
+            <label for="some_3">Конструктивные решения. Деревянные конструкции</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_4">
+            <label for="some_4">Конструктивные решения. Статический расчет</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_5">
+            <label for="some_5">Система электроснабжения. Наружное электроснабжение</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_6">
+            <label for="some_6">Система электроснабжения. Силовое электрооборудование</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_7">
+            <label for="some_7">Система электроснабжения. Электроосвещение</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_8">
+            <label for="some_8">Система электроснабжения. Электроосвещение наружно</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_9">
+            <label for="some_9">Электроснабжение инженерных систем</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_10">
+            <label for="some_10">Система водоснабжения. Наружные сети</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_11">
+            <label for="some_11">Система водоотведения. Наружные сети</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_12">
+            <label for="some_12">Система водоснабжения и(или) водоотведения. Наружные сети</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_13">
+            <label for="some_13">Система водоснабжения и(или) водоотведения. Внутренние сети</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_14">
+            <label for="some_14">Отопление, вентиляция и(или) кондиционирование</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_15">
+            <label for="some_15">Система отопления</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_16">
+            <label for="some_16">Вентиляция и(или) кондиционирование</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_17">
+            <label for="some_17">Теплоснабжение</label>
+          </div>
+          <div class="wrap_checkbox">
+            <input type="checkbox" hidden="hidden" id="some_18">
+            <label for="some_18">Телефония, радиофикация, телеприём</label>
+          </div>
+          <div class="wrap_input">
+            <textarea></textarea>
+            <span class="input_text">Дополнительная информация по экспертизе<span class="red">*</span></span>
+          </div>
+        </div>
+        <div class="wrap_add_file">
+          <div class="file pdf">
+            <p class="info">PDF, 650 Кб <span class="remove red">Удалить</span></p>
+            <p class="title">Чертежи и схемы объекта по адресу г. Воронеж, ул. Ленина 15</p>
+          </div>
+          <div class="choose_file">
+            <div class="big_btn">
+              <span class="text"><span>Прикрепить файл к заявке</span></span>
+              <span class="img">
+                <img src="images/clip.svg" alt="">
+              </span>
+            </div>
+            <p class="choose_file_text"><b>Документы</b> по объекту(ам) технического надзора (к заявке можно прикрепить не более 10 файлов)</p>
+          </div>
+        </div>
+        <h3 class="h3_mb">Контактная информация для ответа</h3>
+        <div class="wrap_input_block">
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Контактное лицо<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Наименование организации</span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Электронная почта (e-mail)<span class="red">*</span></span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Телефон 1</span>
+          </div>
+          <div class="wrap_input">
+            <input type="text">
+            <span class="input_text">Телефон 2</span>
+          </div>
+        </div>
+        <div class="wrap_robot_block">
+          <div class="robot"></div>
+          <button type="submit" class="big_btn">
+              <span class="text"><span>Отправить заявку</span></span>
+            <span class="img">
+                <img src="images/plane.svg" alt="">
+              </span>
+            </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- ПОДКЛЮЧЕНИЕ СКРИПТОВ START -->
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="js/vendor/jquery.fancybox.min.js"></script>
+  <script type="text/javascript" src="js/vendor/slick.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
