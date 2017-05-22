@@ -512,6 +512,7 @@ select {
   height: 48px;
   font-size: 0;
   cursor: pointer;
+  // TODO .small_text is shadowed, never applied
   &.small_text {
     .text {
       @media only screen and (max-width: 767px) {
