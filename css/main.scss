@@ -5,6 +5,7 @@ $d_blue: #373e4e;
 $red: #e63917;
 $yellow: #ffeecc;
 $l_yellow: #fff6e5;
+$default-text-color: #4b5661;
 .color_blue {
   color: $blue;
 }
@@ -40,6 +41,72 @@ select {
   font-family: 'Open Sans', 'Arial', sans-serif;
   font-weight: 400;
   color: #000;
+}
+
+%default-typography {
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+%default-link {
+  color: $blue;
+  transition: .3s;
+  &:hover {
+    color: $red;
+  }
+}
+
+@mixin list($color) {
+  li {
+    @extend %default-typography;
+    position: relative;
+    color: $color;
+    &:before {
+      display: block;
+      position: absolute;
+      content: '';
+      width: 8px;
+      height: 8px;
+      top: 5px;
+      left: -18px;
+      border-radius: 50%;
+      background: $color;
+    }
+    a {
+      @extend %default-link;
+    }
+  }
+}
+
+@mixin heading-left-padding {
+  padding-left: 135px;
+  @media only screen and (max-width: 1023px) {
+    padding-left: 0;
+  }
+}
+
+.editable-section {
+  margin-bottom: 60px;
+  &, .wrap, p {
+    @extend %default-typography;
+    color: $default-text-color;
+  }
+  a {
+    @extend %default-link;
+  }
+  ul, ol {
+    @include list($default-text-color);
+    margin-left: 20px;
+  }
+  h1, h3, h5, h6 {
+    @include heading-left-padding;
+  }
+  p, ul, ol, table, h3, h4, h5, h6 {
+    margin-bottom: 30px;
+  }
+  ol ol, ol ul, ul ol, ul ul {
+    margin-bottom: 0;
+  }
 }
 
 .wrap,
@@ -579,6 +646,7 @@ h2,
 h4 {
   font-size: 30px;
   margin-bottom: 30px;
+  // see also @mixin heading-left-padding
   padding-left: 135px;
   @media only screen and (max-width: 1023px) {
     padding-left: 0;
@@ -1293,6 +1361,7 @@ h4 {
   }
 }
 
+// see also @mixin list
 .list {
   li {
     font-size: 14px;
