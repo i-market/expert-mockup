@@ -6,6 +6,8 @@ $red: #e63917;
 $yellow: #ffeecc;
 $l_yellow: #fff6e5;
 $default-text-color: #4b5661;
+$error-red: #dd4b39;
+$error-red-light: lighten($error-red, 42%);
 .color_blue {
   color: $blue;
 }
@@ -2447,8 +2449,36 @@ h4 {
 }
 
 form {
+  $spacing: 20px;
+  // same as submit button
+  $margin-bottom: 20px;
+  %item {
+    margin-bottom: $margin-bottom;
+    margin-right: $spacing;
+  }
   .loader {
     font-size: 3px;
+    &.form-loader {
+      @extend %item;
+    }
+  }
+  .form-message {
+    @extend %item;
+    &.error {
+      color: $error-red;
+    }
+  }
+  .error {
+    input[type=text],
+    textarea {
+      border-color: $error-red;
+    }
+    .error-message {
+      @extend %default-typography;
+      color: darken($error-red, 10%);
+      padding: 10px 30px;
+      background: $error-red-light;
+    }
   }
 }
 
@@ -2516,7 +2546,7 @@ form {
 
 .wrap_robot_block {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
   max-width: 900px;
