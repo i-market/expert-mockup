@@ -1,3 +1,14 @@
+window.Mockup = {
+  initForms: function($scope) {
+    // инпуты
+    $scope.find('.wrap_input input, .wrap_input textarea').each(function () {
+      $(this).on('change', function () {
+        $(this).val() != "" ? $(this).next().addClass('focus') : $(this).next().removeClass('focus')
+      });
+    })
+  }
+};
+
 $(document).ready(function () {
   // модалка
   $('.modal').click(function (event) {
@@ -40,13 +51,7 @@ $(document).ready(function () {
     return false;
   });
 
-  // инпуты
-  $('.wrap_input input, .wrap_input textarea').each(function () {
-    $(this).on('change', function () {
-      $(this).val() != "" ? $(this).next().addClass('focus') : $(this).next().removeClass('focus')
-    });
-  })
-
+  Mockup.initForms($('body'));
 
   // hamburger
   $('.hamburger').on('click', function () {
