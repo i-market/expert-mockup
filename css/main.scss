@@ -2484,19 +2484,20 @@ form {
 
 .wrap_add_file {
   .file {
+    display: flex;
     min-height: 66px;
-    padding-left: 80px;
     padding-top: 8px;
     margin-bottom: 30px;
     @media only screen and (max-width: 639px) {
       padding-left: 0;
       background: none !important;
     }
-    &.pdf {
-      background: url('../images/pdf.svg')no-repeat left top;
+    .left {
+      width: 80px;
     }
-    &.doc {
-      background: url('../images/doc.svg')no-repeat left top;
+    .right {
+      display: flex;
+      flex-direction: column;
     }
     .remove {
       cursor: pointer;
