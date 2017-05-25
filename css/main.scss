@@ -2331,6 +2331,28 @@ h4 {
   }
 }
 
+.service-request {
+  .success-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 60vh;
+    font-size: 24px;
+    color: $default-text-color;
+    > * {
+      line-height: 1.35;
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+    .icon {
+      height: 4em;
+    }
+  }
+}
+
 .wrap_input_block,
 .wrap_checkbox_block,
 .wrap_add_file {
@@ -2449,21 +2471,10 @@ h4 {
 }
 
 form {
-  $spacing: 20px;
-  // same as submit button
-  $margin-bottom: 20px;
-  %item {
-    margin-bottom: $margin-bottom;
-    margin-right: $spacing;
-  }
   .loader {
     font-size: 3px;
-    &.form-loader {
-      @extend %item;
-    }
   }
   .form-message {
-    @extend %item;
     &.error {
       color: $error-red;
     }
@@ -2546,14 +2557,16 @@ form {
 }
 
 .wrap_robot_block {
+  $item-spacing: 10px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
-  max-width: 900px;
-  margin: 0 auto;
+  // used by forms other than service request ones?
+  //max-width: 900px;
+  margin: 0 -$item-spacing;
   @media only screen and (max-width: 767px) {
-    justify-content: space-around;
+    flex-direction: column;
   }
   .robot {
     width: 300px;
@@ -2568,7 +2581,11 @@ form {
   }
   .big_btn {
     max-width: 270px;
+  }
+  > * {
     margin-bottom: 20px;
+    margin-left: $item-spacing;
+    margin-right: $item-spacing;
   }
 }
 
