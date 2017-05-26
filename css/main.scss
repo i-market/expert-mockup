@@ -2469,7 +2469,8 @@ form {
       color: $error-red;
       span {
         border-bottom: 1px dashed currentColor;
-        padding-bottom: 3px;
+        // pad both top and bottom to keep everything properly centered
+        padding: 3px 0;
         cursor: pointer;
         line-height: 1.8;
       }
