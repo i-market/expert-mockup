@@ -2342,28 +2342,6 @@ h4 {
   }
 }
 
-.service-request {
-  .success-screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-height: 60vh;
-    font-size: 24px;
-    color: $default-text-color;
-    > * {
-      line-height: 1.35;
-      &:not(:last-child) {
-        margin-bottom: 30px;
-      }
-    }
-    .icon {
-      height: 4em;
-    }
-  }
-}
-
 .wrap_input_block,
 .wrap_checkbox_block,
 .wrap_add_file {
@@ -2507,6 +2485,25 @@ form {
       color: darken($error-red, 10%);
       padding: 10px 30px;
       background: $error-red-light;
+    }
+  }
+  .success-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 60vh;
+    font-size: 24px;
+    color: $default-text-color;
+    > * {
+      line-height: 1.35;
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+    .icon {
+      height: 4em;
     }
   }
 }
@@ -3169,7 +3166,10 @@ input[type="radio"]:checked+.radio_label {
     }
   }
   .wrap_robot_block {
-    justify-content: space-around;
+    justify-content: center;
+  }
+  .success-screen {
+    min-height: 400px;
   }
 }
 
