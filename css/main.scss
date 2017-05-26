@@ -109,6 +109,9 @@ select {
   ol ol, ol ul, ul ol, ul ul {
     margin-bottom: 0;
   }
+  &.main-content {
+    min-height: 400px;
+  }
 }
 
 .wrap,
@@ -2475,8 +2478,15 @@ form {
     font-size: 3px;
   }
   .form-message {
+    text-align: center;
     &.error {
       color: $error-red;
+      span {
+        border-bottom: 1px dashed currentColor;
+        padding-bottom: 3px;
+        cursor: pointer;
+        line-height: 1.8;
+      }
     }
   }
   .error {
