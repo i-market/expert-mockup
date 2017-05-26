@@ -1511,14 +1511,21 @@ h4 {
     max-width: 750px;
   }
   .item {
+    display: inline-flex;
     min-height: 66px;
-    padding-left: 80px;
     padding-top: 6px;
     &:hover {
       .text,
       .title {
         color: $blue;
       }
+    }
+    .left {
+      width: 80px;
+    }
+    .right {
+      display: flex;
+      flex-direction: column;
     }
   }
   .text {
