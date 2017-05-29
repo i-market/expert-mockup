@@ -2141,7 +2141,7 @@ h4 {
     }
   }
   a.item:hover {
-    .title {
+    .title, .text {
       transition: .3s;
       color: $red;
     }
