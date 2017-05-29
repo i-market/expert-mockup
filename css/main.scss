@@ -45,12 +45,61 @@ select {
   color: #000;
 }
 
+%default-button {
+  display: block;
+  color: #FFF;
+  height: 48px;
+  font-size: 0;
+  cursor: pointer;
+  &:hover {
+    .text {
+      background: #005cb8;
+    }
+  }
+  .text {
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 48px);
+    font-size: 14px;
+    height: 48px;
+    line-height: 44px;
+    color: #FFF;
+    padding: 0 15px;
+    text-align: center;
+    background: #4a97e5;
+    transition: .3s;
+    span {
+      line-height: 1.2;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  .img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    background: #005cb8;
+    img {
+      max-width: 100%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+
 %default-typography {
   font-size: 14px;
   line-height: 1.35;
 }
 
 %default-link {
+  color: $blue;
+}
+
+@mixin default-link {
   color: $blue;
 }
 
@@ -2281,6 +2330,80 @@ h4 {
     font-size: 16px;
     line-height: 24px;
     transition: .3s;
+  }
+}
+
+.pagination {
+  $hover-color: #deecfa;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  > * {
+    flex-shrink: 0;
+    background: #f7fbfe;
+  }
+  .btn {
+    @extend %default-button;
+    &.first, &.prev {
+      .text, .img {
+        background: transparent;
+      }
+      .text {
+        @extend %default-link;
+      }
+      &:hover {
+        background: $hover-color;
+      }
+    }
+    &.first {
+      display: none;
+      @media only screen and (min-width: 768px) {
+        display: block;
+      }
+    }
+    &.prev {
+      .text {
+        display: none;
+      }
+      @media only screen and (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+  .page {
+    @extend %default-typography;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    padding: 0 24px;
+    @media only screen and (min-width: 768px) {
+      padding: 0;
+      display: flex;
+    }
+    &:not(.active) {
+      @media only screen and (min-width: 768px) {
+        @include default-link;
+        &:hover {
+          background: $hover-color;
+        }
+      }
+    }
+    &.active {
+      display: flex;
+      color: $default-text-color;
+      @media only screen and (min-width: 768px) {
+        color: $red;
+        border-bottom: 2px solid $red;
+        // keep text vertically aligned
+        border-top: 2px solid transparent;
+        font-weight: 800;
+        .expanded {
+          display: none;
+        }
+      }
+    }
   }
 }
 
