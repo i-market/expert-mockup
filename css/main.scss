@@ -52,10 +52,6 @@ select {
 
 %default-link {
   color: $blue;
-  transition: .3s;
-  &:hover {
-    color: $red;
-  }
 }
 
 @mixin list($color) {
@@ -2142,6 +2138,12 @@ h4 {
         line-height: 18px;
         color: #4b5661;
       }
+    }
+  }
+  a.item:hover {
+    .title {
+      transition: .3s;
+      color: $red;
     }
   }
 }
