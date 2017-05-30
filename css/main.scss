@@ -2333,6 +2333,13 @@ h4 {
   }
 }
 
+.opinion-detail {
+  .bottom_btn {
+    margin-top: 30px;
+    justify-content: flex-start;
+  }
+}
+
 .pagination {
   $hover-color: #deecfa;
   display: flex;
