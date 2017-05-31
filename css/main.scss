@@ -1476,6 +1476,7 @@ h4 {
     }
   }
   .accordeon_inner {
+    color: rgba($d_blue, 0.9);
     padding: 30px 15px;
     background: #f7fbfe;
     .list {
@@ -1484,6 +1485,12 @@ h4 {
     }
     .heading {
       padding-left: 0;
+      display: block;
+      // TODO refactor
+      // same as .list
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }
@@ -1598,77 +1605,90 @@ h4 {
   }
 }
 
+@mixin thumbnail {
+  text-align: center;
+  .gallery {
+    &:hover {
+      .wrap_img {
+        &:before,
+        &:after {
+          opacity: 1;
+        }
+      }
+      .text {
+        color: $red;
+      }
+    }
+  }
+  .wrap_img {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin-bottom: 10px;
+    &:before {
+      display: block;
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.4);
+      transition: .3s;
+      opacity: 0;
+      z-index: 1;
+    }
+    &:after {
+      display: block;
+      position: absolute;
+      content: '';
+      width: 48px;
+      height: 48px;
+      top: 50%;
+      margin-top: -24px;
+      left: 50%;
+      margin-left: -24px;
+      background: rgba(0, 0, 0, 0.6) url('../images/search2.svg')no-repeat center center;
+      transition: .3s;
+      opacity: 0;
+      z-index: 2;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+  .text {
+    display: block;
+    padding: 0 20px;
+    line-height: 1.2;
+    transition: .3s;
+    margin-bottom: 10px;
+  }
+  .download_sert {
+    color: $blue;
+    transition: .3s;
+    &:hover {
+      color: $red;
+    }
+  }
+}
+
 .certificates_section {
   .certificates_item {
     margin-bottom: 25px;
   }
   .item {
-    text-align: center;
-    .gallery {
-      &:hover {
-        .wrap_img {
-          &:before,
-          &:after {
-            opacity: 1;
-          }
-        }
-        .text {
-          color: $red;
-        }
-      }
-    }
-    .wrap_img {
-      display: inline-block;
-      vertical-align: top;
-      position: relative;
-      margin-bottom: 10px;
-      &:before {
-        display: block;
-        position: absolute;
-        content: '';
-        width: 100%;
-        height: 100%;
-        top: 0px;
-        left: 0px;
-        background: rgba(0, 0, 0, 0.4);
-        transition: .3s;
-        opacity: 0;
-        z-index: 1;
-      }
-      &:after {
-        display: block;
-        position: absolute;
-        content: '';
-        width: 48px;
-        height: 48px;
-        top: 50%;
-        margin-top: -24px;
-        left: 50%;
-        margin-left: -24px;
-        background: rgba(0, 0, 0, 0.6) url('../images/search2.svg')no-repeat center center;
-        transition: .3s;
-        opacity: 0;
-        z-index: 2;
-      }
-      img {
-        display: block;
-        max-width: 100%;
-        margin: 0 auto;
-      }
-    }
+    @include thumbnail;
+  }
+}
+
+.our-work-thumbnail-grid {
+  .item {
+    @include thumbnail;
     .text {
-      display: block;
-      padding: 0 20px;
-      line-height: 1.2;
-      transition: .3s;
-      margin-bottom: 10px;
-    }
-    .download_sert {
-      color: $blue;
-      transition: .3s;
-      &:hover {
-        color: $red;
-      }
+      text-align: left;
     }
   }
 }
