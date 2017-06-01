@@ -2625,6 +2625,18 @@ h4 {
 }
 
 form {
+  // intercooler
+  &.disabled {
+    .form-message {
+      // kind of hackish, but whatever
+      display: none;
+    }
+    input[type=submit],
+    button[type=submit] {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
   .loader {
     font-size: 3px;
   }
@@ -2670,6 +2682,15 @@ form {
     }
     .icon {
       height: 4em;
+    }
+  }
+}
+
+.calculator_certain_types {
+  .error {
+    .error-message {
+      // override
+      background: transparent;
     }
   }
 }
