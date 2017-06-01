@@ -2661,8 +2661,11 @@ form {
     .error-message {
       @extend %default-typography;
       color: darken($error-red, 10%);
-      padding: 10px 30px;
       background: $error-red-light;
+      padding: 10px 15px;
+      @media only screen and (min-width: 768px) {
+        padding: 10px 30px;
+      }
     }
   }
   .success-screen {
@@ -2691,6 +2694,10 @@ form {
     .error-message {
       // override
       background: transparent;
+      padding: 10px 0;
+      @media only screen and (min-width: 768px) {
+        padding: 10px 30px;
+      }
     }
   }
 }
