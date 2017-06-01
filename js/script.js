@@ -5,7 +5,14 @@ window.Mockup = {
       $(this).on('change', function () {
         $(this).val() != "" ? $(this).next().addClass('focus') : $(this).next().removeClass('focus')
       });
-    })
+    });
+    // открытие скрытых блоков в калькуляторе
+    $scope.find('.hidden_block input').on('change', function () {
+      var item = $(this).data('name');
+      $(this).hasClass('open_block') && $(this).is(':checked') ? $('.' + item).slideDown(200) : $('.' + item).slideUp(200);
+    });
+    // select
+    $('select').dropdown();
   }
 };
 
@@ -60,13 +67,6 @@ $(document).ready(function () {
   $('.menu_hamburger').on('click', function () {
     $('body, html, .main_menu').removeClass('open');
   });
-
-  // открытие скрытых блоков в калькуляторе
-  $('.hidden_block input').on('change', function () {
-    var item = $(this).data('name');
-    $(this).hasClass('open_block') && $(this).is(':checked') ? $('.' + item).slideDown(200) : $('.' + item).slideUp(200);
-  });
-
 
   // запуск видоса
   $('.video_item').on('click', function () {
@@ -178,7 +178,4 @@ $(document).ready(function () {
       mouseleave: true
     }
   });
-  // select
-  $('select').dropdown();
-
 });
