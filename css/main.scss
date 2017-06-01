@@ -2745,7 +2745,7 @@ form {
   flex-wrap: wrap;
   // used by forms other than service request ones?
   //max-width: 900px;
-  margin: 0 -$item-spacing;
+  margin: 0 (-$item-spacing);
   @media only screen and (max-width: 767px) {
     flex-direction: column;
   }
