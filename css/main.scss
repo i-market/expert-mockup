@@ -2639,6 +2639,9 @@ form {
   }
   .loader {
     font-size: 3px;
+    &.inline {
+      margin: 0 auto 20px auto;
+    }
   }
   .form-message {
     text-align: center;
@@ -3223,6 +3226,9 @@ input[type="radio"]:checked+.radio_label {
         padding: 0 10px;
         color: #808080;
         font-size: 14px;
+      }
+      .fs-dropdown {
+        width: 100%;
       }
     }
   }
