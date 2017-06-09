@@ -3377,6 +3377,26 @@ input[type="radio"]:checked+.radio_label {
   display: none !important;
 }
 
+#global-error-message {
+  @extend %default-typography;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  padding: 10px;
+  box-shadow: 0 4px 2px -2px rgba(#000, 0.4);
+  background: $error-red-light;
+  color: rgba(#000, 0.8);
+  .heading {
+    color: $error-red;
+  }
+  a {
+    color: rgba(#000, 0.8);
+    text-decoration: underline;
+  }
+}
+
 // https://projects.lukehaas.me/css-loaders/
 
 .loader,
