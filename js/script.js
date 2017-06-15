@@ -17,7 +17,7 @@ Mockup.initForms = function($scope) {
   $scope.find('.hidden_block input').on('change', function () {
     var item = $(this).data('name');
     var $block = $('.' + item);
-    $(this).hasClass('open_block') && $(this).is(':checked') ? Mockup.closeBlock($block) : Mockup.openBlock($block);
+    $(this).hasClass('open_block') && $(this).is(':checked') ? Mockup.openBlock($block) : Mockup.closeBlock($block);
   });
   // select
   $('select').dropdown();
