@@ -20,7 +20,7 @@ Mockup.initForms = function($scope) {
     $(this).hasClass('open_block') && $(this).is(':checked') ? Mockup.openBlock($block) : Mockup.closeBlock($block);
   });
   // select
-  $('select').dropdown();
+  $scope.find('select').dropdown();
 };
 
 $(document).ready(function () {
