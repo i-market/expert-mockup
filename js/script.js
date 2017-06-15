@@ -1,19 +1,26 @@
 window.Mockup = {
-  initForms: function($scope) {
-    // инпуты
-    $scope.find('.wrap_input input, .wrap_input textarea').each(function () {
-      $(this).on('change', function () {
-        $(this).val() != "" ? $(this).next().addClass('focus') : $(this).next().removeClass('focus')
-      });
-    });
-    // открытие скрытых блоков в калькуляторе
-    $scope.find('.hidden_block input').on('change', function () {
-      var item = $(this).data('name');
-      $(this).hasClass('open_block') && $(this).is(':checked') ? $('.' + item).slideDown(200) : $('.' + item).slideUp(200);
-    });
-    // select
-    $('select').dropdown();
+  openBlock: function($block) {
+    return $block.slideDown(200);
+  },
+  closeBlock: function($block) {
+    return $block.slideUp(200);
   }
+};
+Mockup.initForms = function($scope) {
+  // инпуты
+  $scope.find('.wrap_input input, .wrap_input textarea').each(function () {
+    $(this).on('change', function () {
+      $(this).val() != "" ? $(this).next().addClass('focus') : $(this).next().removeClass('focus')
+    });
+  });
+  // открытие скрытых блоков в калькуляторе
+  $scope.find('.hidden_block input').on('change', function () {
+    var item = $(this).data('name');
+    var $block = $('.' + item);
+    $(this).hasClass('open_block') && $(this).is(':checked') ? Mockup.closeBlock($block) : Mockup.openBlock($block);
+  });
+  // select
+  $('select').dropdown();
 };
 
 $(document).ready(function () {
