@@ -3208,6 +3208,21 @@ input[type="radio"]:checked+.radio_label {
   }
 }
 
+@mixin calc-input {
+  display: block;
+  width: 100%;
+  resize: vertical;
+  border: 1px solid #d1dfee;
+  height: 40px;
+  line-height: 40px;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.2;
+  color: $blue;
+  font-style: italic;
+  padding: 0 30px;
+}
+
 .wrap_calc_item {
   margin-bottom: 20px;
   .inner {
@@ -3257,18 +3272,7 @@ input[type="radio"]:checked+.radio_label {
   input[type="text"],
   input[type="number"],
   textarea {
-    display: block;
-    width: 100%;
-    resize: vertical;
-    border: 1px solid #d1dfee;
-    height: 40px;
-    line-height: 40px;
-    background: #fff;
-    font-size: 16px;
-    line-height: 1.2;
-    color: $blue;
-    font-style: italic;
-    padding: 0 30px;
+    @include calc-input;
   }
   textarea {
     min-height: 40px;
@@ -3338,6 +3342,11 @@ input[type="radio"]:checked+.radio_label {
     font-style: italic;
     margin-top: 5px;
     margin-bottom: 15px;
+  }
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    @include calc-input;
   }
 }
 
