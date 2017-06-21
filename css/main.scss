@@ -2657,9 +2657,13 @@ form {
     }
   }
   .error {
-    input[type=text],
-    textarea {
-      border-color: $error-red;
+    &:not(.group) {
+      input[type=text],
+      input[type=number],
+      textarea,
+      .fs-dropdown-selected {
+        border-color: $error-red;
+      }
     }
     .error-message {
       @extend %default-typography;
@@ -3306,6 +3310,9 @@ input[type="radio"]:checked+.radio_label {
   &.wrap_calc_item_block--checkbox {
     padding: 20px 10px;
     margin-bottom: 20px;
+    &.error {
+      border-bottom: 2px solid $error-red;
+    }
   }
   &.wrap_calc_item_block--some {
     .fs-dropdown {
