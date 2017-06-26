@@ -2624,6 +2624,11 @@ h4 {
   }
 }
 
+@mixin disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 form {
   // intercooler
   &.disabled {
@@ -2633,9 +2638,11 @@ form {
     }
     input[type=submit],
     button[type=submit] {
-      cursor: not-allowed;
-      opacity: 0.5;
+      @include disabled;
     }
+  }
+  button.disabled {
+    @include disabled;
   }
   .loader {
     font-size: 3px;
@@ -3068,7 +3075,11 @@ form {
     padding-left: 0;
     text-align: center;
     color: $blue;
-    margin-bottom: 30px;
+    $margin: 30px;
+    margin-bottom: $margin;
+    &.message {
+      margin-top: $margin + 70px - 35px;
+    }
   }
 }
 
