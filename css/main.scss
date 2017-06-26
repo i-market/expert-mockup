@@ -2705,6 +2705,7 @@ form {
 }
 
 .calculator_certain_types {
+  margin-bottom: 60px;
   .error {
     .error-message {
       // override
@@ -3033,7 +3034,6 @@ form {
 }
 
 .total_price_block {
-  margin-bottom: 60px;
   .inner {
     max-width: 1170px;
     margin: 0 auto;
