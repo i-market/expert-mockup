@@ -3357,6 +3357,13 @@ input[type="radio"]:checked+.radio_label {
   }
 }
 
+.fs-dropdown-mobile {
+  .fs-dropdown-element {
+    // use native selects on mobile
+    z-index: 3;
+  }
+}
+
 .bold {
   font-weight: 700;
   color: #000;
