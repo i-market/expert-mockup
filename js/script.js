@@ -16,8 +16,19 @@ Mockup.initForms = function($scope) {
   // открытие скрытых блоков в калькуляторе
   $scope.find('.hidden_block input').on('change', function () {
     var item = $(this).data('name');
+    var group = $(this).data('group');
     var $block = $('.' + item);
-    $(this).hasClass('open_block') && $(this).is(':checked') ? Mockup.openBlock($block) : Mockup.closeBlock($block);
+    if ($(this).hasClass('open_block') && $(this).is(':checked')) {
+      if (group) {
+        var $rest = $('.group_' + group).not($block);
+        $rest.each(function() {
+          Mockup.closeBlock($(this));
+        });
+      }
+      Mockup.openBlock($block);
+    } else {
+      Mockup.closeBlock($block);
+    }
   });
   // select
   $scope.find('select').dropdown();
