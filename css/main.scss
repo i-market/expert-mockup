@@ -1367,18 +1367,15 @@ h4 {
 .bread_crumbs {
   margin-bottom: 25px;
   li {
-    display: inline-block;
-    vertical-align: middle;
-    margin-bottom: 5px;
+    display: inline;
+    line-height: calc(1em + 5px);
   }
   a {
     color: $blue;
   }
   .separator {
     color: $blue;
-    display: inline-block;
-    vertical-align: middle;
-    margin: 0 5px 5px;
+    margin: 0 5px 0 5px;
   }
 }
 
