@@ -774,6 +774,7 @@ h4 {
     }
     .left {
       width: 280px;
+      flex-shrink: 0;
       padding-right: 25px;
       text-align: right;
       font-size: 30px;
@@ -795,6 +796,7 @@ h4 {
         display: none;
       }
       p {
+        max-width: 600px;
         font-size: 14px;
         line-height: 24px;
       }
