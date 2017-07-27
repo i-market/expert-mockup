@@ -3335,7 +3335,7 @@ input[type="radio"]:checked+.radio_label {
     }
   }
   &.wrap_calc_item_block--some {
-    .fs-dropdown {
+    .fs-dropdown, input[type=text] {
       margin-bottom: 15px;
       &:last-child {
         margin-bottom: 0;
