@@ -3335,9 +3335,17 @@ input[type="radio"]:checked+.radio_label {
     }
   }
   &.wrap_calc_item_block--some {
-    .fs-dropdown, input[type=text] {
+    .fs-dropdown,
+    input[type=text] {
       margin-bottom: 15px;
       &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    // TODO refactor
+    .error {
+      .fs-dropdown,
+      input[type=text] {
         margin-bottom: 0;
       }
     }
