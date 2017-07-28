@@ -1504,6 +1504,12 @@ h4 {
       max-width: 900px;
       margin-left: auto;
       margin-right: auto;
+      a {
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
   }
 }
