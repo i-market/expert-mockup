@@ -1710,6 +1710,9 @@ h4 {
       text-align: left;
     }
   }
+  &.our-work-thumbnail-grid--page {
+    @include wrap;
+  }
 }
 
 .activites_section {
