@@ -1839,7 +1839,9 @@ h4 {
     }
   }
   .gallery {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     position: relative;
     &:hover {
@@ -1877,8 +1879,7 @@ h4 {
       z-index: 2;
     }
     img {
-      display: block;
-      width: 100%;
+      height: 140px;
     }
   }
 }
