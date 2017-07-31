@@ -1710,11 +1710,6 @@ h4 {
       text-align: left;
     }
   }
-  .work_examples_inner + & {
-    @include wrap;
-    // TODO nasty hack
-    margin-top: -60px;
-  }
 }
 
 .activites_section {
@@ -2250,6 +2245,15 @@ h4 {
   .big_btn {
     max-width: 370px;
   }
+  &.bottom_btn--back {
+    margin-top: 30px;
+    justify-content: flex-start;
+  }
+  // TODO refactor
+  .our-work-thumbnail-grid + & {
+    @include wrap;
+    margin-bottom: 60px;
+  }
 }
 
 .infoblock_news {
@@ -2377,13 +2381,6 @@ h4 {
     font-size: 16px;
     line-height: 24px;
     transition: .3s;
-  }
-}
-
-.opinion-detail {
-  .bottom_btn {
-    margin-top: 30px;
-    justify-content: flex-start;
   }
 }
 
