@@ -111,18 +111,24 @@ $(document).ready(function () {
     nextArrow: $('.wrap_banner_slider .next')
   });
   $('.our_objects .grid').slick({
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     prevArrow: $('.our_objects_section .prev'),
     nextArrow: $('.our_objects_section .next'),
     responsive: [
       {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
         breakpoint: 767,
         settings: {
           slidesToShow: 1
         }
-            }
-        ]
+      }
+    ]
   });
   $('.our_clients .grid').slick({
     slidesToShow: 4,
@@ -135,14 +141,14 @@ $(document).ready(function () {
         settings: {
           slidesToShow: 2
         }
-            },
+      },
       {
         breakpoint: 767,
         settings: {
           slidesToShow: 1
         }
-            }
-        ]
+      }
+    ]
   });
   $('.our_reviews .grid').slick({
     slidesToShow: 5,
@@ -155,26 +161,15 @@ $(document).ready(function () {
         settings: {
           slidesToShow: 4
         }
-            },
+      },
       {
         breakpoint: 767,
         settings: {
           slidesToShow: 2
         }
-            }
-        ]
+      }
+    ]
   });
-  var slideResize = function () {
-    if ($(window).width() <= 1024) {
-      $('.our_objects .grid').slick('init');
-    } else {
-      $('.our_objects .grid').slick('unslick');
-    };
-  };
-  $(window).on('load resize', function () {
-    slideResize();
-  });
-
   // tooltips
   $('.tooltip').tooltipster({
     theme: ['tooltipster-noir', 'tooltipster-noir-customized'],
