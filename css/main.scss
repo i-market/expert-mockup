@@ -2287,12 +2287,20 @@ h4 {
 
 .infoblock_gallery {
   margin-bottom: 35px;
+  &.infoblock_gallery--page {
+    .item {
+      display: block
+    }
+  }
   .col_4 {
     @media only screen and (max-width: 767px) {
       width: calc(50% - 30px);
     }
+    @media only screen and (max-width: 425px) {
+      width: calc(100% - 30px);
+    }
   }
-  .gallery {
+  .item {
     height: 160px;
     position: relative;
     &:hover {
@@ -2366,6 +2374,11 @@ h4 {
       line-height: 1;
       font-weight: 600;
     }
+  }
+  .text {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 18px;
   }
 }
 
