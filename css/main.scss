@@ -1893,7 +1893,9 @@ h4 {
     padding-left: 0;
     margin-bottom: 20px;
   }
-  .search_word {
+  // bitrix:search.page wraps them in <b>
+  .search_word,
+  b {
     color: $red;
   }
   .text {
