@@ -3271,6 +3271,14 @@ input[type="radio"]:checked+.radio_label {
 
 .wrap_calc_item {
   margin-bottom: 20px;
+  &.construction-phase {
+    .disabled {
+      label {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
   .inner {
     display: flex;
     justify-content: space-between;
