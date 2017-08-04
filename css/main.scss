@@ -2747,6 +2747,12 @@ form {
       }
     }
   }
+  // hidden placeholder option
+  .fs-dropdown-item[data-value=""] {
+    // `display: none` causes dropdown lists to open at the end
+    height: 0;
+    padding: 0;
+  }
 }
 
 .wrap_add_file {
