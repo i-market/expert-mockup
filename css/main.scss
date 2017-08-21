@@ -779,6 +779,9 @@ h4 {
       text-align: right;
       font-size: 30px;
       border-right: 1px solid #fff;
+      @media only screen and (max-width: 767px) {
+        flex-shrink: 1;
+      }
       @media only screen and (max-width: 500px) {
         font-size: 25px;
         width: auto;
