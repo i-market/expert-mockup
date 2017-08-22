@@ -805,6 +805,17 @@ h4 {
       }
     }
   }
+  // slick FOUC fix
+  // https://github.com/kenwheeler/slick/issues/1741#issuecomment-154062718
+  .banner_slider {
+    .slide {
+      display: none;
+    }
+    &.slick-initialized .slide,
+    .slide:first-child {
+      display: block;
+    }
+  }
 }
 
 .slick-slide {
