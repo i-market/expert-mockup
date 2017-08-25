@@ -2630,7 +2630,14 @@ h4 {
 
 .wrap_checkbox {
   margin-bottom: 15px;
+  &.disabled {
+    label {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
   input:checked+label {
+    transition: none;
     color: #000;
     &:before {
       border-color: #005cb8;
@@ -2649,6 +2656,7 @@ h4 {
     -webkit-user-select: none;
     user-select: none;
     cursor: pointer;
+    transition: 0.3s;
     &:before {
       display: block;
       position: absolute;
@@ -3295,16 +3303,55 @@ input[type="radio"]:checked+.radio_label {
   padding: 0 30px;
 }
 
-.wrap_calc_item {
-  margin-bottom: 20px;
-  &.construction-phase {
-    .disabled {
-      label {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
+@mixin title-like {
+  font-size: 14px;
+  line-height: 1.2;
+  color: #4b5661;
+  padding-left: 30px;
+  margin-bottom: 10px;
+  @media only screen and (max-width: 767px) {
+    padding-left: 0;
+  }
+}
+
+.calculator__expandable-title {
+  @include title-like;
+  position: relative;
+  &:before {
+    display: block;
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 20px;
+    left: 0;
+    top: 0;
+    transition: .3s;
+    background: url('../images/arrow_right_black.svg')no-repeat center center;
+    background-size: 40%;
+    opacity: 0.5;
+  }
+  &,
+  &[data-state="expanded"] {
+    &:before {
+      transform: rotate(#{90 + 180}deg);
     }
   }
+  &[data-state="collapsed"] {
+    &:before {
+      transform: rotate(90deg);
+    }
+  }
+  .text {
+    // TODO extract pseudo-link styles
+    border-bottom: 1px dashed currentColor;
+    padding: 3px 0;
+    cursor: pointer;
+    line-height: 1.8;
+  }
+}
+
+.wrap_calc_item {
+  margin-bottom: 20px;
   .inner {
     display: flex;
     justify-content: space-between;
@@ -3340,14 +3387,7 @@ input[type="radio"]:checked+.radio_label {
     padding-right: 5px;
   }
   .title {
-    font-size: 14px;
-    line-height: 1.2;
-    color: #4b5661;
-    padding-left: 30px;
-    margin-bottom: 10px;
-    @media only screen and (max-width: 767px) {
-      padding-left: 0;
-    }
+    @include title-like;
   }
   input[type="text"],
   input[type="number"],
@@ -3548,4 +3588,3 @@ input[type="radio"]:checked+.radio_label {
     transform: rotate(360deg);
   }
 }
-
