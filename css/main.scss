@@ -3309,9 +3309,6 @@ input[type="radio"]:checked+.radio_label {
   color: #4b5661;
   padding-left: 30px;
   margin-bottom: 10px;
-  @media only screen and (max-width: 767px) {
-    padding-left: 0;
-  }
 }
 
 .calculator__expandable-title {
@@ -3388,6 +3385,9 @@ input[type="radio"]:checked+.radio_label {
   }
   .title {
     @include title-like;
+    @media only screen and (max-width: 767px) {
+      padding-left: 0;
+    }
   }
   input[type="text"],
   input[type="number"],
