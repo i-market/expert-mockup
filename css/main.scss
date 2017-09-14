@@ -779,6 +779,9 @@ h4 {
       text-align: right;
       font-size: 30px;
       border-right: 1px solid #fff;
+      @media only screen and (max-width: 767px) {
+        flex-shrink: 1;
+      }
       @media only screen and (max-width: 500px) {
         font-size: 25px;
         width: auto;
@@ -800,6 +803,17 @@ h4 {
         font-size: 14px;
         line-height: 24px;
       }
+    }
+  }
+  // slick FOUC fix
+  // https://github.com/kenwheeler/slick/issues/1741#issuecomment-154062718
+  .banner_slider {
+    .slide {
+      display: none;
+    }
+    &.slick-initialized .slide,
+    .slide:first-child {
+      display: block;
     }
   }
 }
@@ -2377,7 +2391,7 @@ h4 {
       font-weight: 600;
     }
   }
-  .text {
+  .description {
     margin-top: 10px;
     font-size: 14px;
     line-height: 18px;
@@ -2549,6 +2563,12 @@ h4 {
   }
 }
 
+.wrap_checkbox_block {
+  .error-message {
+    margin-bottom: 15px;
+  }
+}
+
 .wrap_input {
   position: relative;
   margin-bottom: 25px;
@@ -2612,7 +2632,14 @@ h4 {
 
 .wrap_checkbox {
   margin-bottom: 15px;
+  &.disabled {
+    label {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
   input:checked+label {
+    transition: none;
     color: #000;
     &:before {
       border-color: #005cb8;
@@ -2631,6 +2658,7 @@ h4 {
     -webkit-user-select: none;
     user-select: none;
     cursor: pointer;
+    transition: 0.3s;
     &:before {
       display: block;
       position: absolute;
@@ -2748,6 +2776,12 @@ form {
         padding: 10px 30px;
       }
     }
+  }
+  // hidden placeholder option
+  .fs-dropdown-item[data-value=""] {
+    // `display: none` causes dropdown lists to open at the end
+    height: 0;
+    padding: 0;
   }
 }
 
@@ -3271,6 +3305,50 @@ input[type="radio"]:checked+.radio_label {
   padding: 0 30px;
 }
 
+@mixin title-like {
+  font-size: 14px;
+  line-height: 1.2;
+  color: #4b5661;
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+
+.calculator__expandable-title {
+  @include title-like;
+  position: relative;
+  &:before {
+    display: block;
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 20px;
+    left: 0;
+    top: 0;
+    transition: .3s;
+    background: url('../images/arrow_right_black.svg')no-repeat center center;
+    background-size: 40%;
+    opacity: 0.5;
+  }
+  &,
+  &[data-state="expanded"] {
+    &:before {
+      transform: rotate(#{90 + 180}deg);
+    }
+  }
+  &[data-state="collapsed"] {
+    &:before {
+      transform: rotate(90deg);
+    }
+  }
+  .text {
+    // TODO extract pseudo-link styles
+    border-bottom: 1px dashed currentColor;
+    padding: 3px 0;
+    cursor: pointer;
+    line-height: 1.8;
+  }
+}
+
 .wrap_calc_item {
   margin-bottom: 20px;
   .inner {
@@ -3308,11 +3386,7 @@ input[type="radio"]:checked+.radio_label {
     padding-right: 5px;
   }
   .title {
-    font-size: 14px;
-    line-height: 1.2;
-    color: #4b5661;
-    padding-left: 30px;
-    margin-bottom: 10px;
+    @include title-like;
     @media only screen and (max-width: 767px) {
       padding-left: 0;
     }
@@ -3516,4 +3590,3 @@ input[type="radio"]:checked+.radio_label {
     transform: rotate(360deg);
   }
 }
-
