@@ -1,9 +1,13 @@
 window.Mockup = {
   openBlock: function($block) {
-    return $block.slideDown(200);
+    $block.slideDown(200, function() {
+      $block.trigger('openBlock.app');
+    });
   },
   closeBlock: function($block) {
-    return $block.slideUp(200);
+    $block.slideUp(200, function() {
+      $block.trigger('closeBlock.app');
+    });
   }
 };
 Mockup.initForms = function($scope) {

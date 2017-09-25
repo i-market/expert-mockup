@@ -142,6 +142,11 @@ input[type="number"] {
   }
 }
 
+@mixin disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 .editable-section {
   margin-bottom: 60px;
   &, .wrap, p {
@@ -2634,8 +2639,7 @@ h4 {
   margin-bottom: 15px;
   &.disabled {
     label {
-      opacity: 0.5;
-      cursor: not-allowed;
+      @include disabled;
     }
   }
   input:checked+label {
@@ -2683,11 +2687,6 @@ h4 {
       background: url('../images/checkbox.svg')no-repeat center center;
     }
   }
-}
-
-@mixin disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
 }
 
 form {
@@ -3279,6 +3278,9 @@ form {
     background: #FFF;
     border-radius: 50%;
     border: 1px solid #d1dfee;
+  }
+  &.disabled {
+    @include disabled;
   }
 }
 
