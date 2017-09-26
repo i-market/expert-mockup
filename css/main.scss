@@ -2264,6 +2264,12 @@ h4 {
       color: $red;
     }
   }
+  @media only screen and (max-width: 767px) {
+    // TODO more phone-like MQ
+    .col:nth-child(n+4) {
+      display: none;
+    }
+  }
 }
 
 .bottom_btn {
