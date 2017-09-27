@@ -200,14 +200,18 @@ input[type="number"] {
   font-size: 0;
 }
 
-.col {
-  display: inline-block;
-  vertical-align: top;
-  font-size: 14px;
+@mixin col-margins {
   margin: 0 15px 30px;
   @media only screen and (max-width: 767px) {
     margin-bottom: 15px;
   }
+}
+
+.col {
+  @include col-margins;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 14px;
 }
 
 .col_2 {
@@ -977,6 +981,9 @@ h4 {
 
 .our_objects_section {
   margin-bottom: 30px;
+  .slick-slide {
+    @include col-margins;
+  }
   .item {
     position: relative;
     margin-bottom: 20px;
@@ -1030,6 +1037,9 @@ h4 {
   background: -ms-linear-gradient(left, rgba(208, 218, 232, 1) 0%, rgba(236, 241, 245, 1) 100%);
   background: linear-gradient(to right, rgba(208, 218, 232, 1) 0%, rgba(236, 241, 245, 1) 100%);
   /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0dae8', endColorstr='#ecf1f5', GradientType=1);*/
+  .slick-slide {
+    @include col-margins;
+  }
   .img {
     display: flex;
     align-items: center;
@@ -1049,6 +1059,9 @@ h4 {
 
 .our_reviews_section {
   margin-bottom: 30px;
+  .slick-slide {
+    @include col-margins;
+  }
   .item {
     text-align: center;
     &:hover {
@@ -1106,6 +1119,8 @@ h4 {
       padding: 0 20px;
       line-height: 1.2;
       transition: .3s;
+      // same font size as .col
+      font-size: 14px;
     }
   }
 }
