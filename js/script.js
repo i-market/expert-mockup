@@ -8,6 +8,15 @@ window.Mockup = {
     $block.slideUp(200, function() {
       $block.trigger('closeBlock.app');
     });
+  },
+  openModal: function($modal) {
+    $modal.fadeIn(100);
+    $($modal).find('.block').fadeIn(100, function() {
+      $modal.trigger('openModal.app');
+    });
+    $('html, body').css({
+      overflow: 'hidden'
+    });
   }
 };
 Mockup.initForms = function($scope) {
@@ -56,13 +65,8 @@ $(document).ready(function () {
     });
   });
   $('[data-modal]').on('click', function () {
-    var dataModal = $(this).attr('data-modal'),
-      dataId = $('#' + dataModal);
-    dataId.fadeIn(100);
-    $(dataId).find('.block').fadeIn(100);
-    $('html, body').css({
-      overflow: 'hidden'
-    });
+    var $modal = $('#' + $(this).attr('data-modal'));
+    Mockup.openModal($modal);
   });
 
   // прокрутка вверх
