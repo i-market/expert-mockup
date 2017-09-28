@@ -26,6 +26,11 @@ body {
   }
 }
 
+// fancybox `scrolling` option doesn't work. maybe upgrade fancybox?
+html.fancybox-enabled {
+  overflow-y: visible !important;
+}
+
 body {
   font-size: 14px;
   background: #e6ebf2;

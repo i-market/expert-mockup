@@ -105,9 +105,6 @@ $(document).ready(function () {
     $(this).toggleClass('active');
   });
 
-  // просмотр изображений
-  $('.gallery').fancybox();
-
   // tooltips
   $('.tooltip').tooltipster({
     theme: ['tooltipster-noir', 'tooltipster-noir-customized'],
