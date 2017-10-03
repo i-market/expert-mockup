@@ -1161,6 +1161,12 @@ h4 {
   }
 }
 
+.accordeon {
+  .accordeon_inner {
+    display: none;
+  }
+}
+
 .pre_footer {
   padding-top: 60px;
   background: #e0e5eb;

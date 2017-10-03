@@ -101,14 +101,6 @@ $(document).ready(function () {
     $(this).find('iframe').attr('src', autoPlay).fadeIn();
   });
 
-  // аккордион
-  $(".accordeon .accordeon_inner").hide().prev().on('click', function () {
-    $('.accordeon_inner', '.accordeon').not(this).slideUp(100);
-    $(this).next().not(':visible').slideDown(100);
-    $('.accordeon_title', '.accordeon').not(this).removeClass('active');
-    $(this).toggleClass('active');
-  });
-
   // tooltips
   $('.tooltip').tooltipster({
     theme: ['tooltipster-noir', 'tooltipster-noir-customized'],
