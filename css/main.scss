@@ -2146,9 +2146,6 @@ h4 {
   align-items: flex-start;
   flex-wrap: wrap;
   margin-bottom: 35px;
-  &:last-child {
-    margin-bottom: 0;
-  }
   .video {
     width: 370px;
     @media only screen and (max-width: 767px) {
