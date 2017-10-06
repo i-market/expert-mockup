@@ -1068,7 +1068,8 @@ h4 {
       // background-blend-mode is not supported by edge
       // http://caniuse.com/#feat=css-backgroundblendmode
       background-blend-mode: luminosity;
-      background-size: cover;
+      background-size: contain;
+      background-repeat: no-repeat;
       transition: all 0.3s ease;
     }
   }
