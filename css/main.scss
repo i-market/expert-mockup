@@ -1035,9 +1035,10 @@ h4 {
 }
 
 .our_clients_section {
+  $background: #e7edf3;
   padding: 60px 0 0;
   margin-bottom: 60px;
-  background: #e7edf3;
+  background: $background;
   .slick-slide {
     @include col-margins;
   }
@@ -1048,10 +1049,11 @@ h4 {
     margin-bottom: 20px;
     height: 125px;
     padding: 10px;
-    //filter: grayscale(100%);
-    transition: all 0.3s ease;
     &:hover {
-      filter: none;
+      .img__inner {
+        opacity: 1;
+        background-blend-mode: normal;
+      }
     }
     &:last-child {
       margin-bottom: 0;
@@ -1061,6 +1063,13 @@ h4 {
       // exact dimensions of images provided by the client
       width: 190px;
       height: 85px;
+      opacity: 0.66;
+      background-color: $background;
+      // background-blend-mode is not supported by edge
+      // http://caniuse.com/#feat=css-backgroundblendmode
+      background-blend-mode: luminosity;
+      background-size: cover;
+      transition: all 0.3s ease;
     }
   }
 }
