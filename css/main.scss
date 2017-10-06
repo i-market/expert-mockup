@@ -1037,33 +1037,30 @@ h4 {
 .our_clients_section {
   padding: 60px 0 0;
   margin-bottom: 60px;
-  background: rgb(208, 218, 232);
-  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2QwZGFlOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlY2YxZjUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-  background: -moz-linear-gradient(left, rgba(208, 218, 232, 1) 0%, rgba(236, 241, 245, 1) 100%);
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(208, 218, 232, 1)), color-stop(100%, rgba(236, 241, 245, 1)));
-  background: -webkit-linear-gradient(left, rgba(208, 218, 232, 1) 0%, rgba(236, 241, 245, 1) 100%);
-  background: -o-linear-gradient(left, rgba(208, 218, 232, 1) 0%, rgba(236, 241, 245, 1) 100%);
-  background: -ms-linear-gradient(left, rgba(208, 218, 232, 1) 0%, rgba(236, 241, 245, 1) 100%);
-  background: linear-gradient(to right, rgba(208, 218, 232, 1) 0%, rgba(236, 241, 245, 1) 100%);
-  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0dae8', endColorstr='#ecf1f5', GradientType=1);*/
+  background: #e7edf3;
   .slick-slide {
     @include col-margins;
   }
   .img {
     display: flex;
     align-items: center;
-    background: #FFF;
+    justify-content: center;
     margin-bottom: 20px;
     height: 125px;
-    border: 1px solid $border;
     padding: 10px;
+    //filter: grayscale(100%);
+    transition: all 0.3s ease;
+    &:hover {
+      filter: none;
+    }
     &:last-child {
       margin-bottom: 0;
     }
     .img__inner {
       display: block;
-      width: 100%;
-      height: 100%;
+      // exact dimensions of images provided by the client
+      width: 190px;
+      height: 85px;
     }
   }
 }
