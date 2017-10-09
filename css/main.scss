@@ -994,7 +994,10 @@ h4 {
     @include col-margins;
   }
   .item {
+    display: flex;
+    flex-direction: column;
     position: relative;
+    height: 255px;
     margin-bottom: 20px;
     &:hover {
       .info {
@@ -1011,20 +1014,16 @@ h4 {
       z-index: 1;
     }
     .img {
-      height: 160px;
+      flex-grow: 1;
     }
     .info {
-      height: 95px;
       display: flex;
       text-align: center;
       align-items: center;
       color: #FFF;
       background: $blue;
-      padding: 0 40px;
+      padding: 15px 20px;
       transition: .3s;
-      @media only screen and (max-width: 767px) {
-        padding: 0 20px;
-      }
       p {
         width: 100%;
         font-size: 16px;
