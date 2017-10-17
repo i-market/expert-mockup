@@ -207,6 +207,9 @@ input[type="number"] {
 .grid {
   margin: 0 -15px;
   font-size: 0;
+  &.grid--center {
+    text-align: center;
+  }
 }
 
 @mixin col-margins {
@@ -1760,6 +1763,30 @@ h4 {
   }
   .item {
     @include thumbnail;
+  }
+  .before-download {
+    margin-bottom: 1em;
+  }
+  .download {
+    display: block;
+    width: 100%;
+    color: $blue;
+    transition: .3s;
+    &:hover {
+      color: $red;
+    }
+    &.download--bottom {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    &.download--top {
+      margin-bottom: 35px;
+      // same as h4
+      padding-left: 135px;
+      @media only screen and (max-width: 1023px) {
+        padding-left: 0;
+      }
+    }
   }
 }
 
