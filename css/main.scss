@@ -1795,11 +1795,13 @@ h4 {
     }
   }
   .section-description {
-    @extend %default-typography;
     width: 100%;
     max-width: 400px;
-    text-align: center;
     margin: 0 auto 10px;
+    text-align: center;
+    // same as item text
+    font-size: 14px;
+    line-height: 1.2;
   }
 }
 
