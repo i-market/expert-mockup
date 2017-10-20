@@ -3566,7 +3566,7 @@ input[type="radio"]:checked+.radio_label {
       margin-bottom: 0;
     }
   }
-  .top {
+  .top, .bottom {
     padding: 0 20px;
   }
   .title {
@@ -3579,6 +3579,13 @@ input[type="radio"]:checked+.radio_label {
     font-style: italic;
     margin-top: 5px;
     margin-bottom: 15px;
+    &.text--hint {
+      opacity: 0.7;
+      margin-top: 10px;
+      p {
+        margin-bottom: 10px;
+      }
+    }
   }
   input[type="text"],
   input[type="number"],
