@@ -3624,6 +3624,10 @@ input[type="radio"]:checked+.radio_label {
   }
 }
 
+.fs-dropdown-item_disabled {
+  cursor: not-allowed;
+}
+
 .bold {
   font-weight: 700;
   color: #000;
