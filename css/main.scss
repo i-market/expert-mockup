@@ -783,6 +783,10 @@ h4 {
   margin-bottom: 10px;
 }
 
+.text-nowrap {
+  white-space: nowrap;
+}
+
 .wrap_banner_slider {
   position: relative;
   color: #FFF;
@@ -1659,11 +1663,13 @@ h4 {
     }
   }
   td {
-    width: 50%;
     padding: 15px 30px;
-    line-height: 1.2;
+    line-height: 1.35;
     font-size: 18px;
+  }
+  td:first-child {
     font-weight: 600;
+    width: 350px;
   }
 }
 
