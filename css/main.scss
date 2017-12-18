@@ -685,7 +685,7 @@ input[type="number"] {
   color: #FFF;
   width: 100%;
   height: 48px;
-  font-size: 0;
+  font-size: 0 !important;
   cursor: pointer;
   // TODO .small_text is shadowed, never applied
   &.small_text {
@@ -708,7 +708,6 @@ input[type="number"] {
     font-size: 14px;
     height: 48px;
     line-height: 44px;
-    color: #FFF;
     padding: 0 15px;
     text-align: center;
     background: #4a97e5;
@@ -717,6 +716,9 @@ input[type="number"] {
       line-height: 1.2;
       display: inline-block;
       vertical-align: middle;
+    }
+    &, span {
+      color: #FFF;
     }
   }
   .img {
@@ -2406,9 +2408,11 @@ h4 {
       box-shadow: 4px 4px 0 0 #f0f0f0;
     }
     .text {
-      font-size: 14px;
-      line-height: 18px;
-      transition: .3s;
+      &, p {
+        font-size: 14px;
+        line-height: 18px;
+        transition: .3s;
+      }
     }
   }
 }
@@ -3725,4 +3729,198 @@ input[type="radio"]:checked+.radio_label {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+.info-images-cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.info-img-cont {
+  padding: 10px;
+}
+
+@media (min-width: 962px) {
+  .info-img-cont {
+    width: 33.333%;
+  }
+  a.info-img-img {
+    height: 283px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 961px) {
+  .info-img-cont {
+    width: 50%;
+  }
+  a.info-img-img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 767px) {
+  .info-img-cont {
+    width: 100%;
+  }
+  a.info-img-img {
+    height: 200px;
+  }
+}
+
+a.info-img-img {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  border: 3px solid #000;
+  box-shadow: 3px 3px 5px 0px rgba(153,153,153,1);
+  position: relative;
+}
+
+a.info-img-img::before {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-transition: .3s;
+  transition: .3s;
+  opacity: 0;
+  z-index: 1;
+}
+
+a.info-img-img::after {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 48px;
+  height: 48px;
+  top: 50%;
+  margin-top: -24px;
+  left: 50%;
+  margin-left: -24px;
+  background: rgba(0, 0, 0, 0.6) url(../images/search2.svg) no-repeat center center;
+  -webkit-transition: .3s;
+  transition: .3s;
+  opacity: 0;
+  z-index: 2;
+}
+
+a.info-img-img:hover::before,
+a.info-img-img:hover::after {
+  opacity: 1;
+}
+
+.info-img-img img {
+  /*max-width: calc(100% - 10px);
+  max-height: calc(100% - 10px);*/
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+
+}
+.info-img-title {
+  color: #000000;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 8px;
+}
+
+.quote-block {
+  border: 1px solid #dbdbdb;
+  padding-left: 40px;
+  position: relative;
+  border-radius: 3px;
+  background: #deecfa;
+  margin: 20px 0;
+}
+.quote-block::before {
+  content: '';
+  width: 23px;
+  height: 23px;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  -moz-transform: translate(0, -50%);
+  /* Для Firefox */
+  -ms-transform: translate(0, -50%);
+  /* Для IE */
+  -webkit-transform: translate(0, -50%);
+  /* Для Safari, Chrome, iOS */
+  -o-transform: translate(0, -50%);
+  /* Для Opera */
+  transform: translate(0, -50%);
+  background: url('/images/star.png') no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+}
+.quote-txt-cont {
+  padding: 10px 10px 10px 0;
+}
+.quote-txt-cont span {
+  font-size: 16px;
+}
+
+.opinion-detail-page div[class*="detail-section"],
+.opinion-detail-page div[class*="detail-section"] p
+{
+  font-size: 17px;
+  line-height: 1.35;
+}
+span.quote-txt-quote,
+span.quote-txt-quote *,
+span.quote-txt-quote p {
+  color: #0054a5;
+  font-weight: 600;
+  font-style: italic;
+  margin-bottom: 0;
+  line-height: 1.35;
+}
+span.quote-txt-quote a:hover {
+  color: #e63917;
+}
+.read-more-cont {
+  margin-top: 20px;
+}
+.read-more-title {
+  color: #0072bc;
+  font-size: 25px;
+  font-weight: 600;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.read-more-links {
+  text-align: center;
+}
+.read-more-links *,
+.read-more-links a,
+.read-more-links p {
+  color: #0072bc;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1.5;
+}
+.read-more-links p {
+  margin-bottom: 10px;
+  text-align: center;
+}
+.read-more-links a:hover {
+  color: #e63917;
+}
+
+.opinion-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
 }
