@@ -169,10 +169,17 @@ input[type="number"] {
     @include list($default-text-color);
     margin-left: 20px;
   }
-  h1, h3, h5, h6 {
+  h1, .h1,
+  h3, .h3,
+  h5, .h5,
+  h6, .h6 {
     @include heading-left-padding;
   }
-  p, ul, ol, table, h3, h4, h5, h6 {
+  p, ul, ol, table,
+  h3, .h3,
+  h4, .h4,
+  h5, .h5,
+  h6, .h6 {
     margin-bottom: 30px;
   }
   ol ol, ol ul, ul ol, ul ul {
@@ -743,17 +750,17 @@ input[type="number"] {
   background: #FFF;
 }
 
-h1,
-h2,
-h3 {
+h1, .h1,
+h2, .h2,
+h3, .h3 {
   line-height: 1.2;
   font-weight: 800;
   text-transform: uppercase;
 }
 
-h1,
-h2,
-h4 {
+h1, .h1,
+h2, .h2,
+h4, .h4 {
   font-size: 30px;
   margin-bottom: 30px;
   // see also @mixin heading-left-padding
@@ -764,11 +771,11 @@ h4 {
   }
 }
 
-h1 {
+h1, .h1 {
   padding-left: 0;
 }
 
-h3 {
+h3, .h3 {
   font-size: 24px;
   margin-bottom: 10px;
   @media only screen and (max-width: 1023px) {
@@ -776,7 +783,7 @@ h3 {
   }
 }
 
-h4 {
+h4, .h4 {
   font-size: 18px;
   line-height: 1.3;
   font-weight: 700;
@@ -1012,7 +1019,7 @@ h4 {
       text-decoration: none;
     }
   }
-  h4 {
+  h4, .h4 {
     color: $blue;
     margin-bottom: 35px;
     text-transform: uppercase;
@@ -1551,13 +1558,13 @@ h4 {
     cursor: pointer;
     padding: 0 15px;
     &.active {
-      h4 {
+      h4, .h4 {
         &:before {
           transform: rotate(180deg);
         }
       }
     }
-    h4 {
+    h4, .h4 {
       position: relative;
       padding: 35px 55px 35px 0;
       max-width: 900px;
@@ -2019,7 +2026,7 @@ h4 {
 .search_section,
 .wrap_search_items_foto {
   margin-bottom: 65px;
-  h4 {
+  h4, .h4 {
     color: $blue;
     padding-left: 0;
     margin-bottom: 20px;
@@ -2257,7 +2264,7 @@ h4 {
   .top {
     margin-bottom: 40px;
   }
-  h4 {
+  h4, .h4 {
     color: $blue;
     text-transform: uppercase;
     padding-left: 0;
@@ -2653,19 +2660,19 @@ h4 {
     font-size: 20px;
     color: $blue;
   }
-  h2,
-  h3,
-  h4 {
+  h2, .h2,
+  h3, .h3,
+  h4, .h4 {
     padding-left: 0;
     margin-bottom: 40px;
   }
-  h3 {
+  h3, .h3 {
     font-size: 18px;
     line-height: 32px;
     font-weight: 700;
     color: $blue;
   }
-  h4 {
+  h4, .h4 {
     margin-bottom: 15px;
     font-size: 15px;
   }
@@ -2687,7 +2694,7 @@ h4 {
 .wrap_checkbox_block,
 .wrap_add_file {
   margin-bottom: 50px;
-  h4 {
+  h4, .h4 {
     padding-left: 30px;
   }
 }
@@ -3067,7 +3074,7 @@ form {
     }
   }
   .bottom {
-    h4 {
+    h4, .h4 {
       padding-left: 0;
       text-transform: uppercase;
       color: $blue;
@@ -3268,7 +3275,7 @@ form {
       }
     }
   }
-  h4 {
+  h4, .h4 {
     display: block;
     text-transform: uppercase;
     padding-left: 0;
