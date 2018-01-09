@@ -1291,6 +1291,15 @@ h4, .h4 {
         margin-bottom: 5px;
       }
     }
+    @media only screen and (min-width: 1024px) {
+      position: relative;
+      padding: 25px 0;
+      img {
+        position: absolute;
+        left: 0;
+        top: 15px;
+      }
+    }
   }
   .logo_footer {
     width: 210px;
